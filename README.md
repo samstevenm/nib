@@ -6,8 +6,8 @@ Network in a box
 2. Notes
   + Sharing WiFi to Ethernet, used `changeip.sh` to set to 192.168.2.1/24 (default is 10.42.0.1/24)
   + Auto-launches Chrome in Kiosk Mode on Boot.  Use ALT-F4 to kill, if desired.
-  +`dpkg -i /path/to/VNC-ServerXXX.deb`
-  +`startvncviewer.sh` used  to start/start on boot
+  + `dpkg -i /path/to/VNC-ServerXXX.deb` to install REALVNC, since this is Mate not Raspian
+  + `startvncviewer.sh` used to start/ enable start at boot
   + Other scripts are attempts to simplify launching Chrome/Connecting to Hub
 
 ## REALVNC- 
