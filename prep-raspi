@@ -7,6 +7,9 @@ sudo wget -O /opt/wacnet/wacnet-2.1.7-standalone.jar https://hvac.io/wacnet/wacn
 
 sudo apt install xrdp
 
+https://www.raspberryconnect.com/projects/65-raspberrypi-hotspot-accesspoints/157-raspberry-pi-auto-wifi-hotspot-switch-internet
 https://github.com/RaspberryConnect/AutoHotspot-Installer
 
+
+https://unix.stackexchange.com/questions/522053/installing-a-network-manager-that-works-in-the-terminal-on-debian9
 sudo apt install network-manager
