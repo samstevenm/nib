@@ -1,0 +1,30 @@
+{
+"PROJECT":{
+    "name":"SomeProject",
+    "address":"123 AnyStreet",
+    "city":"Some City",
+    "sate":"XX",
+    "zip":"12345",
+    "notes":"12"
+},
+"HUBS":[
+        {
+            "HUB_SN":"",
+            "HUB_Ethernet_MAC":"",
+            "HUB_Wifi_MAC":"",
+            "HUB_Wifi_Name":"",
+            "HUB_Wifi_Password":"",
+            "HUB_System_Password":""
+        }	
+    ],
+"PIS":[
+        {
+            "PI_SN":"",
+            "PI_Ethernet_MAC":"",
+            "PI_Wifi_MAC":"",
+            "PI_User_Name":"",
+            "PI_Password":""
+        }	
+]
+}
+
