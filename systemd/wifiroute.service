@@ -1,0 +1,17 @@
+#/etc/system/systemd/wifiroute.service
+[Unit]
+Description=Wifi to Ethernet Bridge
+After=network.target
+Wants=network.target
+
+[Service]
+# Type=simple
+Type=forking
+WorkingDirectory=/opt
+# Fix the paths below:
+ExecStart=/bin/bash /opt/wifi-to-eth-route.sh start
+Restart=on-failure
+User=root
+
+[Install]
+WantedBy=multi-user.target

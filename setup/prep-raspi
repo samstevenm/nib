@@ -1,0 +1,24 @@
+sudo apt-get install -y hostapd dnsmasq bridge-utils nginx wireguard avahi-daemon parprouted dhcp-helper
+
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev
+
+sudo mkdir -p /opt/wacnet
+sudo wget -O /opt/wacnet/wacnet-2.1.7-standalone.jar https://hvac.io/wacnet/wacnet-2.1.7-standalone.jar
+
+sudo apt install xrdp
+
+https://www.raspberryconnect.com/projects/65-raspberrypi-hotspot-accesspoints/157-raspberry-pi-auto-wifi-hotspot-switch-internet
+https://github.com/RaspberryConnect/AutoHotspot-Installer
+
+
+https://unix.stackexchange.com/questions/522053/installing-a-network-manager-that-works-in-the-terminal-on-debian9
+sudo apt install network-manager
+
+Run Raspi-config to set WI-Fi to US
+Install Tailescale
+
+Raspi comes up (reachable over tailscale) in about 40 seconds
+WiFi bridge starts working within 2 minutes (1:35)
+
+TODO: IF no internet for ahwile, kill the autohotspot and run the autohotspot script
+testing change wpa_supplicant to contain vad info, reboot. hotspot should turn on for "recovery mode"

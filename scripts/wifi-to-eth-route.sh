@@ -12,14 +12,15 @@
 # Don't forget to change the name of network interface
 # Check them with `ifconfig`
 
-ip_address="192.168.7.1"
+ip_address="192.168.2.1"
 netmask="255.255.255.0"
-dhcp_range_start="192.168.7.2"
-dhcp_range_end="192.168.7.20"
-dhcp_time="24h"
+dhcp_range_start="192.168.2.2"
+dhcp_range_end="192.168.2.100"
+dhcp_time="12h"
 dns_server="1.1.1.1"
 eth="eth0"
 wlan="wlan0"
+hub_mac_addr="9c:eb:e8:99:92:3b"
 
 sudo systemctl start network-online.target &> /dev/null
 
@@ -42,12 +43,14 @@ sudo systemctl stop dnsmasq
 
 sudo rm -rf /etc/dnsmasq.d/* &> /dev/null
 
-echo "interface=$eth\n\
-bind-interfaces\n\
-server=$dns_server\n\
-domain-needed\n\
-bogus-priv\n\
-dhcp-range=$dhcp_range_start,$dhcp_range_end,$dhcp_time" > /tmp/custom-dnsmasq.conf
+echo "interface=$eth
+bind-interfaces
+server=$dns_server
+domain-needed
+bogus-priv
+dhcp-range=$dhcp_range_start,$dhcp_range_end,$dhcp_time
+dhcp-host=$hub_mac_addr,192.168.2.2
+" > /tmp/custom-dnsmasq.conf
 
 sudo cp /tmp/custom-dnsmasq.conf /etc/dnsmasq.d/custom-dnsmasq.conf
 sudo systemctl start dnsmasq
