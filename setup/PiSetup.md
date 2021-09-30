@@ -3,10 +3,20 @@
 1. Connect to raspi over ssh
 1. Run Raspi-config to set WI-Fi to US
 1. `sudo apt update && sudo apt upgrade`
+1. Install and connect Tailscale - https://tailscale.com/download
+1. Place `wifi-to-eth-route.sh` in `/opt`
 
-Install Tailscale
-Place `wifi-to-eth-route.sh` in `/opt`
-Place `wifiroute.service` in `/etc/systemd/system`
+### WACnet
+1. Download WACnet
+    1. Put latest version of wacnet into `/opt/wacnet`
+    1. Get the last version from https://hvac.io/docs/wacnet
+    1. `sudo mkdir -p /opt/wacnet`
+    1. `sudo wget -P /opt/wacnet https://hvac.io/wacnet/wacnet-2.1.7-standalone.jar`
+1. Make WACnet a service
+    1. Place `wacnet.service` into `/etc/systemd/system`
+    1. `sudo wget -P /etc/system/systemd https://raw.githubusercontent.com/samstevenm/nib/master/systemd/wacnet.service`
+    1. `sudo systemctl enable wacnet.service`
+
 
 Raspi comes up (reachable over Tailscale) in about 35 to 45 seconds < 1min
 WiFi route starts working almost immediately

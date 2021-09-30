@@ -1,0 +1,17 @@
+#/etc/systemd/system/wacnet.service
+
+[Unit]
+Description=Wacnet. Wacnet (by HVAC.io) converts BACnet devices to a RestAPI.
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/wacnet
+# Fix the paths & version below:
+ExecStart=/usr/bin/java -jar /opt/wacnet/wacnet-2.1.7-standalone.jar 1>/dev/null 2>&1 &
+Restart=on-failure
+User=pi
+
+[Install]
+WantedBy=multi-user.target
